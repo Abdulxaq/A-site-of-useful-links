@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UsefuLinks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *,:after,:before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-position: center;
+            background-size: cover;
+            background: rgb(252, 252, 252);
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+         /** ************************************* HEADER ****************************************** **/
+        .nav{
+            box-shadow: 0 1px 10px rgb(97, 97, 97) ;
+            position: fixed;
+            background-attachment: fixed;
+            background: rgb(119 119 142);
+            width: 100vw;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            z-index: 5;
+        }
+        .nav ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav ul li a{
+            position: relative;
+            background-image: linear-gradient(to right ,rgb(255, 115, 0) , rgb(94, 255, 247) ) ;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+            font-family:'Sansita Swashed';
+            font-weight:700;
+            font-size: 18px;
+            text-decoration: none;
+            color: beige;
+            margin: 0 50px 0 50px;
+        }
+        .nav ul li a:before{
+            transform-origin: right;
+            content: "";
+            display: block;
+            background: rgb(0, 255, 191);
+            height: 1px;
+            width: 100%;
+            transform:scaleX(0);
+            transition: .5s;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            z-index: -1;
+        }
+        .nav ul li a:hover:before{
+            transform:scaleX(1);
+            transform-origin: left;
+            transition: 0.5s;
+
+        }
+        .hj{
+            filter: blur(1px);
+            transform:scaleX(1);
+            transform-origin: left;
+            transition: 0.5s;
+        }
+        .nav ul li:hover{
+            filter: blur(0px);
+            background-image: linear-gradient(to right ,rgb(255, 190, 50) , rgb(51, 255, 221) ) ;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+            transform: scale(1.3);
+            transition: .7s;
+        }
+        .logo span:nth-child(1){
+            text-shadow: 0 0 10px grey;
+            font-family:'Sansita Swashed', cursive;
+            font-weight:700;
+            font-size: 30px;
+            color: rgb(0, 255, 213);
+        }
+        .logo span:nth-child(2){
+            text-shadow: 0 0 8px grey;
+            font-family: 'Acme', sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            background: linear-gradient(to right ,rgb(0, 255, 213), rgb(255, 174, 0) ) ;
+            color: #fff;
+            border-radius: 3px;
+            border: 0 ;
+        }
+        .logo span:nth-child(3){
+            text-shadow: 0 0 10px grey;
+            font-family: 'Acme', sans-serif;
+            font-weight: 900;
+            font-size: 30px;
+            color: rgb(255, 174, 0);
+        }
+        .logo{
+            width: 155px;
+            border: 0px;
+        }
+        .logo:after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient(to right ,rgb(255, 145, 0) , rgb(0, 255, 200) ) ;
+            width: 100vw;
+            height: 4px;
+        }
+        .categories{
+            background:rgba(0, 0, 0, 0.274) ;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-top: 70px;
+            border: red solid 0px;
+            width: 100vw;
+            position: fixed;
+            background-attachment: fixed;
+        }
+        .categories p span{
+            text-shadow: 0 0 3px orange;
+            color: rgb(255, 121, 43);
+            font-size: 21px;
+            font-weight: 900;
+        }
+        .categories p a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-weight: 900;
+        }
+        .categories p{
+            font-family: 'Roboto', sans-serif;
+            background: rgba(255, 255, 255, 0.5);
+            border: 0px red solid;
+            border-radius: 10px;
+            padding: 3px;
+            height: 35px;
+            margin: 3px;
+        }
+        .categories p:hover{
+            background:rgba(0, 0, 0, 0.5);
+            transform: scale(1.05);
+            transition: .5s;
+
+        }
+        .categories p:hover a{
+            color: #fff;
+        }
+        .div{
+            height:70px;
+            width: 100%;
+        }
+        /** ************************************* CONTENTS ****************************************** **/
+        .content{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;    
+        }
+        .contents{
+            box-shadow: 0 0  30px rgb(100, 100, 100);
+            background: #fff ;
+            padding: 30px;
+            width: 800px;
+            margin: 30px 0 0 0 ;
+        }
+        .web_name{
+            color: black;
+            font-size: 30px;
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+        }
+        .web_name span{
+            color: orangered;
+        }
+        .web_name a{
+            text-decoration: underline;
+            color: black;
+            cursor: pointer;
+        }
+        .contents p{
+            letter-spacing: 1px;
+            line-height: 30px;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            text-align: justify;
+            margin: 10px 0 15px 0;
+        }
+        .contents img{
+            width: 740px;
+        }
+          /** ************************************* CONTACT US ****************************************** **/
+        .contact_us{
+            margin-top: 50px;
+            width: 100%;
+            height: 680px;
+            background-color:  rgb(119 119 142);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .contact_us h4{
+            color: #fff;
+            margin-top: 110px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 40px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .contact_us h4 span{
+            background-image: linear-gradient(to right ,rgb(255, 190, 50) , rgb(51, 255, 221) ) ;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+        .contact_us p{
+            letter-spacing: 1px;
+            line-height: 30px;
+            font-family: 'Roboto', sans-serif;
+            width: 700px;
+            margin-top: 15px;
+            color: #ffffff;
+            text-align: center;
+            font-weight: 200;
+        }
+        .form{
+            width: 1300px;
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .ditail{
+            width: 452px;
+            height: 210px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .details{
+            padding-left: 10px;
+            border: rgba(245, 245, 245, 0) 1px solid;
+            border-radius: 5px;
+            margin-top: 30px;
+            width: 450px;
+            height: 50px;
+        }
+        .details:first-child{
+            margin-top: 0px;
+        }
+        #your_message{
+            padding-left: 10px;
+            border-radius: 5px;
+            margin-left: 30px;
+            width: 450px;
+            height: 210px;
+            padding-top: 15px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+        .contact_us #lbutton{
+            margin-top: 30px;
+            margin-bottom: 116px;
+            width: 240px;
+            height: 65px;
+            background: linear-gradient(to right ,rgb(0, 255, 213), rgb(255, 174, 0) ) ;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-style: 18px;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            border-color: rgba(17, 218, 198, 0);
+            color: white;
+            font-weight: 600;
+        }
+        /** ************************************* FOOTER ****************************************** **/
+        .footer{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        #contactus:after{
+            margin-top: -112px;
+            content: "";
+            top: 0;
+            display: block;
+            background: linear-gradient(to right ,rgb(255, 145, 0) , rgb(0, 255, 200) ) ;
+            width: 100%;
+            height: 4px;
+        }
+        .footer p{
+            font-size: 14px;
+            font-family: 'Montserrat';
+            font-weight: 400;
+            text-align: left;
+            margin-left: -500px;
+            margin-top: -2px;
+        }
+        .footer i{
+            color: rgb(33, 31, 30);
+            text-shadow: rgba(0, 0, 0, 0.7) 0 0 10px;
+            margin: 20px 0 20px 15px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="nav">
+            <a href="" style="text-decoration:none;"><div class=" logo"><span>Usefu</span><span>L</span><span>inks.</span></div></a>
+            <ul>
+                <li><a href="#" id="Category_btn">Category</a></li>
+                <li><a href="#contactus">Contact</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </div>
+        <div class="categories" id="Category" onmouseover="ok()">
+            <p v-for="i in message" ><span>#</span><a href="#" >{{i.web_category}}</a></p>      
+        </div>
+        <div class="div"></div>
+        <div class="content">
+            <div class="contents" v-for="i in message">
+                <span class="web_name"><span>#</span><a target="_blank" :href="i.web_link">{{i.web_name}}</a></span>
+                <p>{{i.web_info}}</p>
+                <img :src="i.web_img" :alt="i.web_link">
+            </div>
+            <div id="contactus" class="contact_us">
+                <div>  <h4><span>CONTACT</span></h4>
+                    <p>If you found or had any mistake or error please contact us. We also will be happy if you have any offer. </p>
+                </div>
+                <div class="form">
+                    <div class="ditail">
+                        <input class="details" type="name" placeholder="YOUR NAME*">
+                        <input  type="email" class="details" placeholder="YOUR E-MAIL*">
+                        <input class="details" type="name" placeholder="SUBJECT">
+                    </div>
+                    <div class="message">
+                           <textarea id="your_message" class="form-control" name="" rows="3" placeholder="YOUR MESSAGE*"></textarea>
+                    </div>
+                </div>
+                <input id="lbutton" type="button" value="SEND MESSAGE">
+            </div>
+            <div class="footer">
+                <div>
+                    <a target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.pinterest.com/"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.google.com/"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                </div>
+                <div><p>© Copyright 2014 FreebiesXpress.com</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#main",
+            data:{
+                message:[{
+                web_name:"chordify",
+                web_link:"http://chordify.net",
+                web_info:"O'zingiz yoqtirgan qo'shiqning akkordlarini olishni istarmidingiz? ChorDify sayti bu musiqa ixlosmandlari uchun haqiqiy topilma. Uning yordamida siz xohlagan qo'shiqning akkordlarini topishingiz mumkin, shunchaki videoni YouTube-dan qo'shiq bilan yuklab olishingiz mumkin. ",
+                web_img:"images/chordify.net.jpg",
+                web_category:"music",
+            },{
+                web_name:"donothing",
+                web_link:"http://donothingfor2minutes.com",
+                web_info:"'2 daqiqa davomida hech narsa qilmang' portali sizga hech narsa qilishga imkon bermaydi. Ikki daqiqa davomida barcha messenjerlarlarni o'chirib qo'yishingiz, ijtimoiy tarmoqlardan chiqishingiz, boshqa brauzer sahifalarini yopishingiz va quloqqa naushnikni tiqib to'lqinlarning tinchlantiruvchi ovozini tinglashingiz kerak. Bu kunning o'rtasida dam olishning ajoyib usuli. O'zingizda sinab ko'ring!",
+                web_img:"images/donothingfor2minutes.com.jpg",
+                web_category:"relax",
+            },{
+                web_name:"pwned?",
+                web_link:"http://haveibeenpwned.com",
+                web_info:"E-pochtangizni hoziroq tekshirib kuring! Have I Been Pwned veb-saytida sizning hisoblaringizga kiber jinoyatchilar hujum qilganmi yoki yuqligini bilib olishingiz mumkin. Buning uchun maxsus qatorga elektron pochta manzilni kiritasiz xolos.",
+                web_img:"images/haveibeenpwned.com.jpg",
+                web_category:"IT & internet",
+            }]
+             },
+        })
+    </script>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#Category").slideUp();
+        $("#Category_btn").click(function(){
+            $("#Category").slideToggle();
+        });
+
+        });
+    </script>
+
+</body>
+</html>
